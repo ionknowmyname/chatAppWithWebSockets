@@ -12,13 +12,14 @@ public class WsConfig  implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/test").withSockJS();
+        registry.addEndpoint("/chat").withSockJS();
     }
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         // simple in-memory broker
         registry.enableSimpleBroker("/topic");
+        // registry.enableSimpleBroker("/topic", "/queue");
 
         // for RabbitMQ message broker
         /*registry.enableStompBrokerRelay("/topic")
