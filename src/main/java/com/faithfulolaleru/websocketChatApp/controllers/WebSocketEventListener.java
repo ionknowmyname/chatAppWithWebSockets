@@ -15,11 +15,15 @@ import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 
 @Component
 @Slf4j
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class WebSocketEventListener {
 
     private SimpMessageSendingOperations messagingTemplate;
+
+    public WebSocketEventListener(SimpMessageSendingOperations messagingTemplate) {
+        this.messagingTemplate = messagingTemplate;
+    }
 
 
 
